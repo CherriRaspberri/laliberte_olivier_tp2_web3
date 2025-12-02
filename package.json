@@ -1,0 +1,27 @@
+{
+  "name": "laliberte_olivier_tp2_web3",
+  "version": "1.0.0",
+  "description": "TP2 fait dans le cadre du cours de web 3 au Collège Montmorency.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CherriRaspberri/laliberte_olivier_tp2_web3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/CherriRaspberri/laliberte_olivier_tp2_web3/issues"
+  },
+  "homepage": "https://github.com/CherriRaspberri/laliberte_olivier_tp2_web3#readme",
+  "dependencies": {
+    "animejs": "^4.2.2",
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
+    "chart.js": "^4.5.1"
+  }
+}
