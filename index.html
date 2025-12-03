@@ -1,3 +1,4 @@
+<!--Olivier Laliberté - 2025-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TP2 - HUD</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.svg">
 
     <!--CSS local imports-->
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -27,8 +29,89 @@
     <script src="./src/js/boostrap.js" defer></script>
 </head>
 
+
+<!--
+TODO : 
+    - Black background
+    - Boxes (Bootstrap + Grid) :
+        - Glowy borders (VHS coded like the teacher's example)
+        - Margins
+-->
 <body>
-    
+    <!--
+    TODO : 
+        - 'Now playing/paused' header (Bootstrap icons + typed.js)
+        - Play / pause button with sound when pressed (tone.js)
+        - Skip button (won't work)
+    -->
+    <header class="container border mt-3">
+        <div class="row p-1">
+            <!--Now playing display-->
+            <div class="col-6 border">
+                col-01
+            </div>
+            <!--Play button menu-->
+            <div class="col-2 offset-4 border">
+                col-02
+            </div>
+        </div>
+    </header>
+
+    <!--
+    TODO :
+        LEFT :
+            - 2 boxes :
+                - TOP : Speaker that vibrates when the music is on (animejs)
+                - BOTTOM : Music album spinning (zdog)
+        RIGHT : 
+            - 2 boxes : 
+                - TOP : ? 3d?
+                - BOTTOM : radio box 
+
+                    - music listener (snippet of the day from teacher's examples)
+                    - knobs animated when play or pause has been pressed (animejs)
+    -->
+    <main class="container border mt-2">
+        <div class="row p-1">
+            <!--Left bar-->
+            <div class="col-4 d-flex flex-column gap-1 ps-0 pe-1" id="left-bar">
+                <!--Music display-->
+                <div class="left-bar-element border flex-grow-1 w-100">
+                    left-bar-element-01
+                </div>
+                <!--Speaker-->
+                <div class="left-bar-element border flex-grow-1 w-100">
+                    left-bar-element-02
+                </div>
+            </div>
+            <div class="col-8 d-flex flex-column gap-1 px-0">
+                <!---->
+                <div class="border w-100" style="flex: 3;">
+                    right-element-01
+                </div>
+                <!--Knobs + sound display-->
+                <div class="border w-100" style="flex: 1;">
+                    right-element-02
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--
+    TODO :
+        - Graphs moving (chartjs)
+        - Circular graphs x3 on the left + one long line graph
+    -->
+    <footer class="container border mt-2">
+        <div class="row p-1">
+            <div class="col-3 border">
+                foot-col-01
+            </div>
+            <div class="col-8 offset-1 border">
+                foot-col-02
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
