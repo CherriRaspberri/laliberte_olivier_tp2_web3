@@ -1,3 +1,144 @@
+:root {
+  --light-color: #ece0c8;
+  --mid-light: #949993;
+
+  --dark-color: #191f1d;
+  --mid-dark: #555a57;
+
+  --shadow: #0005;
+
+  --noise-texture: url(https://i.gyazo.com/a26366e538851a5c569ff648e99b7fd4.png);
+
+  --rainbow: radial-gradient(circle at left top, #ede6bf, #ecc947, #cb5a31, #6f5d79, #4e779a);
+
+  --main-transition: all 0.2s ease-in-out;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+
+  background: var(--dark-color);
+  background-image: var(--noise-texture);
+  background-blend-mode: overlay;
+
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 #left-bar {
-    height: 750px;
+  height: 750px;
+}
+
+.now-playing {
+  color: var(--light-color);
+  font-size: 3rem;
+  font-family: "Modak", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.noise-container {
+  height: 100%;
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  background-image: linear-gradient(150deg,
+      var(--dark-color) 60.2%,
+      var(--mid-dark) 60.28%,
+      var(--mid-dark) 60.7%,
+      var(--dark-color) 60.78%,
+      var(--dark-color) 61.4%,
+      var(--mid-dark) 61.48%,
+      var(--mid-dark) 62.6%,
+      var(--dark-color) 62.68%,
+      var(--dark-color) 63.4%,
+      var(--mid-dark) 63.48%,
+      var(--mid-dark) 64.6%,
+      var(--dark-color) 64.68%,
+      var(--dark-color) 65.4%,
+      var(--mid-dark) 65.48%,
+      var(--mid-dark) 67.4%,
+      var(--dark-color) 67.48%,
+      var(--dark-color) 68.4%,
+      var(--mid-dark) 68.48%,
+      var(--mid-dark) 71.4%,
+      var(--dark-color) 71.48%,
+      var(--dark-color) 72.4%,
+      var(--mid-dark) 72.48%,
+      var(--mid-dark) 76.4%,
+      var(--dark-color) 76.48%,
+      var(--dark-color) 77.4%,
+      var(--mid-dark) 77.48%,
+      var(--mid-dark) 81.4%,
+      var(--dark-color) 81.48%,
+      var(--dark-color) 82.4%,
+      var(--mid-dark) 82.48%,
+      var(--mid-dark) 87.4%,
+      var(--dark-color) 87.48%);
+}
+
+.noise-container:before {
+  content: "";
+
+  height: 100%;
+  width: 100%;
+
+  background-image: var(--noise-texture);
+  background-repeat: repeat;
+
+  display: flex;
+
+  position: absolute;
+  z-index: 3;
+  
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.noise-container:after {
+  content: "";
+  display: flex;
+  position: absolute;
+  height: 580px;
+  width: 960px;
+  translate: 0px 0px;
+  background-repeat: no-repeat;
+  background-position-y: -20px;
+  background-size: cover;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  opacity: 64%;
+  z-index: 3;
+}
+
+.sphere {
+  height: 50px;
+  width: 50px;
+  background-image: var(--rainbow);
+  border: 3px solid var(--dark-color);
+  transition: all 0.3s;
+  border-radius: 50%;
+  box-shadow: 0px 0px var(--shadow);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sphere:hover {
+  cursor: pointer;
+  scale: 1.1;
+  box-shadow: 10px 10px var(--shadow);
+  transition: var(--main-transition);
 }

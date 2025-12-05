@@ -19,14 +19,21 @@
             "imports": {
                 "animejs": "./node_modules/animejs/dist/bundles/anime.esm.min.js",
                 "chart.js": "./node_modules/chart.js/auto/auto.js",
-                "@kurkle/color": "./node_modules/@kurkle/color/dist/color.esm.js"
+                "@kurkle/color": "./node_modules/@kurkle/color/dist/color.esm.js",
+                "typed.js": "./node_modules/typed.js/dist/typed.module.js"
             }
         }
         
     </script>
     <script src="./src/js/animejs.js" type="module"></script>
     <script src="./src/js/chartjs.js" type="module"></script>
+    <script src="./src/js/typedjs.js" type="module"></script>
     <script src="./src/js/boostrap.js" defer></script>
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
 </head>
 
 
@@ -37,28 +44,29 @@ TODO :
         - Glowy borders (VHS coded like the teacher's example)
         - Margins
 -->
-<body>
-    <!--
-    TODO : 
-        - 'Now playing/paused' header (Bootstrap icons + typed.js)
-        - Play / pause button with sound when pressed (tone.js)
-        - Skip button (won't work)
-    -->
-    <header class="container border mt-3">
-        <div class="row p-1">
-            <!--Now playing display-->
-            <div class="col-6 border">
-                col-01
-            </div>
-            <!--Play button menu-->
-            <div class="col-2 offset-4 border">
-                col-02
-            </div>
-        </div>
-    </header>
 
-    <!--
-    TODO :
+<body>
+    <div class="noise-container">
+        <!--
+        TODO : 
+            - 'Now playing/paused' header (Bootstrap icons + typed.js)
+            - Play / pause button with sound when pressed (tone.js)
+            - Skip button (won't work)
+        -->
+        <header class="container mt-3">
+            <div class="h-100 row p-1">
+                <div class="col-7 now-playing">
+                    <!--Title + now playing string animation (typed.js)-->
+                    <span id="play-pause"></span>
+                </div>
+                <div class="col-3 offset-2 d-flex justify-content-around">
+                    <div class="sphere"></div>
+                    <div class="sphere"></div>
+                </div>
+            </div>
+        </header>
+        <!--
+        TODO :
         LEFT :
             - 2 boxes :
                 - TOP : Speaker that vibrates when the music is on (animejs)
@@ -70,48 +78,44 @@ TODO :
 
                     - music listener (snippet of the day from teacher's examples)
                     - knobs animated when play or pause has been pressed (animejs)
-    -->
-    <main class="container border mt-2">
-        <div class="row p-1">
-            <!--Left bar-->
-            <div class="col-4 d-flex flex-column gap-1 ps-0 pe-1" id="left-bar">
-                <!--Music display-->
-                <div class="left-bar-element border flex-grow-1 w-100">
-                    left-bar-element-01
+        -->
+            <main class="container border mt-2">
+            <div class="row p-1">
+                <div class="col-4 d-flex flex-column gap-1 ps-0 pe-1" id="left-bar">
+                    <div class="left-bar-element border flex-grow-1 w-100">
+                        left-bar-element-01
+                    </div>
+                    <div class="left-bar-element border flex-grow-1 w-100">
+                        left-bar-element-02
+                    </div>
                 </div>
-                <!--Speaker-->
-                <div class="left-bar-element border flex-grow-1 w-100">
-                    left-bar-element-02
-                </div>
-            </div>
-            <div class="col-8 d-flex flex-column gap-1 px-0">
-                <!---->
-                <div class="border w-100" style="flex: 3;">
-                    right-element-01
-                </div>
-                <!--Knobs + sound display-->
-                <div class="border w-100" style="flex: 1;">
-                    right-element-02
+                <div class="col-8 d-flex flex-column gap-1 px-0">
+                    <div class="border w-100" style="flex: 3;">
+                        right-element-01                                
+                    </div>
+                    <div class="border w-100" style="flex: 1;">
+                        <!--Tone vizualizer-->
+                        <div class="visualizer"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
-
-    <!--
-    TODO :
-        - Graphs moving (chartjs)
-        - Circular graphs x3 on the left + one long line graph
-    -->
-    <footer class="container border mt-2">
-        <div class="row p-1">
-            <div class="col-3 border">
-                foot-col-01
+        </main>
+        <!--
+        TODO :
+            - Graphs moving (chartjs)
+            - Circular graphs x3 on the left + one long line graph
+        -->
+        <footer class="container border mt-2">
+            <div class="row p-1">
+                <div class="col-3 border">
+                    foot-col-01
+                </div>
+                <div class="col-8 offset-1 border">
+                    foot-col-02
+                </div>
             </div>
-            <div class="col-8 offset-1 border">
-                foot-col-02
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 </body>
 
 </html>
