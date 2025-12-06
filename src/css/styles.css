@@ -14,7 +14,8 @@
   --main-transition: all 0.2s ease-in-out;
 }
 
-html, body {
+html,
+body {
   width: 100vw;
   height: 100vh;
 }
@@ -35,7 +36,7 @@ body {
 }
 
 #left-bar {
-  height: 750px;
+  height: 650px;
 }
 
 .now-playing {
@@ -101,7 +102,7 @@ body {
 
   position: absolute;
   z-index: 3;
-  
+
   mix-blend-mode: overlay;
   pointer-events: none;
 }
@@ -141,4 +142,19 @@ body {
   scale: 1.1;
   box-shadow: 10px 10px var(--shadow);
   transition: var(--main-transition);
+}
+
+.zdog-canvas {
+  width: 70%;
+  height: 35%;
+
+  margin-bottom: 40px;
+
+  cursor: move;
+}
+
+@media screen and (max-width: 992px) {
+  #left-bar {
+    height: 350px;
+  }
 }
