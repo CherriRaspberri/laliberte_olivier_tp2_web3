@@ -21,6 +21,8 @@
                 "chart.js": "./node_modules/chart.js/auto/auto.js",
                 "@kurkle/color": "./node_modules/@kurkle/color/dist/color.esm.js",
                 "typed.js": "./node_modules/typed.js/dist/typed.module.js",
+                "tone.js": "https://esm.sh/tone@15.1.22",
+                "tone-visualizer": "./node_modules/tone-visualizer/dist/visualizer.esm.js",
                 "zzz": "https://esm.sh/zdog"
             }
         }
@@ -29,6 +31,7 @@
     <script src="./src/js/animejs.js" type="module"></script>
     <script src="./src/js/chartjs.js" type="module"></script>
     <script src="./src/js/typedjs.js" type="module"></script>
+    <script src="./src/js/tone-visualizer.js" type="module"></script>
     <script src="./src/js/zdog.js" type="module"></script>
     <script src="./src/js/boostrap.js" defer></script>
 
@@ -55,9 +58,6 @@
             </div>
         </header>
         <!--
-        TODO :
-        LEFT :
-                - TOP : Speaker that vibrates when the music is on (animejs)
         RIGHT : 
             - 2 boxes : 
                 - TOP : maplibre
@@ -70,13 +70,15 @@
             LEFT: bootstrap + anime.js + zdog
             RIGHT: bootstrap + bootstrap-icons + anime.js + maplibre
         -->
-        <main class="container border mt-2">
+        <main class="container mt-2">
             <div class="row p-1">
                 <div class="col-12 col-lg-4 d-flex flex-lg-column gap-1 ps-0 pe-0 pe-lg-1 mb-1 mb-lg-0" id="left-bar">
                     <!--Speaker (anime.js)-->
-                    <div class="left-bar-element border flex-grow-1 w-100">
-                        <div class="speaker">
-
+                    <div class="left-bar-element flex-grow-1 d-flex align-items-center justify-content-center w-100">
+                        <div class="speaker-container d-flex flex-column align-items-center justify-content-around">
+                            <div class="speaker-small"></div>
+                            <!--Woofer (anime.js)-->
+                            <div class="speaker-big d-flex align-items-center justify-content-center"></div>
                         </div>
                     </div>
                     <div
@@ -89,12 +91,17 @@
                 </div>
 
                 <div class="col-12 col-lg-8 d-flex flex-column gap-1 px-0">
-                    <div class="border w-100" style="flex: 3;">
+                    <div class="border w-100 order-2 order-lg-1" style="flex: 3;">
                         right-element-01
                     </div>
-                    <div class="border w-100" style="flex: 1;">
-                        <!--Tone vizualizer-->
-                        <div class="visualizer"></div>
+                    <div class="w-100 order-1 order-lg-2" style="flex: 1;">
+                        <!--Amp knobs (anime.js)-->
+                        <div class="amp-container d-flex align-items-center justify-content-between">
+                            <div class="amp-knob"></div>
+                            <!--Tone vizualizer-->
+                            <div class="visualizer"></div>
+                            <div class="amp-knob"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -107,10 +114,10 @@
         <footer class="container border mt-2">
             <div class="row p-1">
                 <!--Random graphs x3 (grid CSS + chart.js)-->
-                <div class="col-3 border">
+                <div class="col-4 border">
                     foot-col-01
                 </div>
-                <div class="col-8 offset-1 border">
+                <div class="col-8 border">
                     foot-col-02
                 </div>
             </div>
