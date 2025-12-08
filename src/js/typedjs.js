@@ -1,7 +1,6 @@
 import Typed from "typed.js";
 
-let isPlaying = false;
-
+//Creates animation for text
 let playText = new Typed("#play-pause", {
     strings: ["RETRO-FUTURIST"],
     typeSpeed: 50,
@@ -9,15 +8,14 @@ let playText = new Typed("#play-pause", {
     backDelay: 3000
 });
 
-document.getElementById('play-button').addEventListener('click', function() {
-    if (!isPlaying) {
+//Switches from one text to the other when the audio is playing / paused
+export function updateTypedText(isPlaying) {
+    if (isPlaying) {
         playText.strings = ["NOW PLAYING..."];
         playText.reset(true);
-        isPlaying = true
     }
     else {
         playText.strings = ["PAUSED"];
         playText.reset(true);
-        isPlaying = false;
     }
-});
+}

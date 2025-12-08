@@ -1,3 +1,4 @@
+//Complex expressions given by Zdog website.
 import Zdog from "zzz";
 
 let isSpinning = true;

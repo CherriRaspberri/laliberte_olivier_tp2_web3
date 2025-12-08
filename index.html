@@ -22,23 +22,24 @@
                 "@kurkle/color": "./node_modules/@kurkle/color/dist/color.esm.js",
                 "typed.js": "./node_modules/typed.js/dist/typed.module.js",
                 "tone.js": "https://esm.sh/tone@15.1.22",
-                "tone-visualizer": "./node_modules/tone-visualizer/dist/visualizer.esm.js",
+                "maplibre-gl": "https://esm.sh/maplibre-gl@5.13.0",
                 "zzz": "https://esm.sh/zdog"
             }
         }
-        
     </script>
+
     <script src="./src/js/animejs.js" type="module"></script>
     <script src="./src/js/chartjs.js" type="module"></script>
     <script src="./src/js/typedjs.js" type="module"></script>
-    <script src="./src/js/tone-visualizer.js" type="module"></script>
     <script src="./src/js/zdog.js" type="module"></script>
+    <script src="./src/js/maplibre.js" type="module"></script>
+    <script src="./src/js/tonejs.js" type="module"></script>
     <script src="./src/js/boostrap.js" defer></script>
 
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Modak&family=Sarina&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -58,22 +59,15 @@
             </div>
         </header>
         <!--
-        RIGHT : 
-            - 2 boxes : 
-                - TOP : maplibre
-                - BOTTOM : radio box 
-                    - music listener (snippet of the day from teacher's examples)
-                    - knobs animated when play or pause has been pressed (animejs)
-        -->
-        <!--
             Main : 
-            LEFT: bootstrap + anime.js + zdog
-            RIGHT: bootstrap + bootstrap-icons + anime.js + maplibre
+            LEFT: bootstrap + anime.js + zdog + bootstrap-icons
+            RIGHT: bootstrap + anime.js + maplibre
         -->
         <main class="container mt-2">
             <div class="row p-1">
+                <!--Left-bar-->
                 <div class="col-12 col-lg-4 d-flex flex-lg-column gap-1 ps-0 pe-0 pe-lg-1 mb-1 mb-lg-0" id="left-bar">
-                    <!--Speaker (anime.js)-->
+                    <!--Speaker-->
                     <div class="left-bar-element flex-grow-1 d-flex align-items-center justify-content-center w-100">
                         <div class="speaker-container d-flex flex-column align-items-center justify-content-around">
                             <div class="speaker-small"></div>
@@ -85,20 +79,26 @@
                         class="left-bar-element flex-grow-1 d-flex flex-column align-items-center justify-content-center w-100">
                         <!--Spinning group (zdog)-->
                         <canvas class="zdog-canvas"></canvas>
-                        <!--Music tracker-->
-                        <span>Music tracker here</span>
+                        <!--Music tracker (anime.js + bootstrap-icons)-->
+                        <div class="d-flex align-items-center justify-content-center w-100">
+                            <div class="tracker-container">
+                                <div class="tracker-progress"></div>
+                            </div>
+                            <i class="bi bi-pause-fill fs-1 text-white" id="play-icon"></i>
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-12 col-lg-8 d-flex flex-column gap-1 px-0">
-                    <div class="border w-100 order-2 order-lg-1" style="flex: 3;">
-                        right-element-01
+                <!--Right-bar-->
+                <div class="col-12 col-lg-8 d-flex flex-column align-items-center gap-1 px-0">
+                    <div class="w-100 map-container" style="flex: 3;">
+                        <div id="map"></div>
                     </div>
-                    <div class="w-100 order-1 order-lg-2" style="flex: 1;">
+                    <div class="w-100" style="flex: 1;">
                         <!--Amp knobs (anime.js)-->
                         <div class="amp-container d-flex align-items-center justify-content-between">
                             <div class="amp-knob"></div>
-                            <!--Tone vizualizer-->
+                            <!--Tone vizualizer (tone-visualizer.js)-->
                             <div class="visualizer"></div>
                             <div class="amp-knob"></div>
                         </div>
@@ -107,18 +107,19 @@
             </div>
         </main>
         <!--
-        TODO :
-            - Graphs moving (chartjs)
-            - Circular graphs x3 on the left + one long line graph
+            Footer :
+            - Chart.js + grid CSS
         -->
-        <footer class="container border mt-2">
+        <footer class="container mt-2">
             <div class="row p-1">
                 <!--Random graphs x3 (grid CSS + chart.js)-->
-                <div class="col-4 border">
-                    foot-col-01
+                <div class="col-4 grid-container">
+                    <canvas class="grid-item chart-01"></canvas>
+                    <canvas class="grid-item chart-02"></canvas>
+                    <canvas class="grid-item chart-03"></canvas>
                 </div>
-                <div class="col-8 border">
-                    foot-col-02
+                <div class="col-8 d-flex align-items-center justify-content-center credits">
+                    Olivier Laliberté - 2025
                 </div>
             </div>
         </footer>
